@@ -2969,7 +2969,7 @@
         map: sunTexture,
         color: 0xf5a742, // Orange doux
         emissive: 0xf08000,
-        emissiveIntensity: 0.3
+        emissiveIntensity: 0.2
       });
       
       // Créer la sphère du soleil
@@ -3161,16 +3161,16 @@
           map: planetTexture,
           color: data.color,
           emissive: data.color,
-          emissiveIntensity: 0.4
+          emissiveIntensity: 0.2
         });
       } else {
         // Matériau standard pour les autres planètes avec émissivité très faible pour éviter la surbrillance
         planetMaterial = new THREE.MeshStandardMaterial({
           map: planetTexture,
           emissive: new THREE.Color(data.color).multiplyScalar(0.03), // Émissivité encore plus faible
-          emissiveIntensity: 0.05,
-          roughness: 0.95, // Presque totalement rugueux pour minimiser les reflets
-          metalness: 0.05
+          emissiveIntensity: 0.02,
+          roughness: 0.98, // Presque totalement rugueux pour minimiser les reflets
+          metalness: 0.03
         });
       }
       
