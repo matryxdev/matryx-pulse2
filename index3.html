@@ -1088,7 +1088,7 @@
         gravity: 27.9, // gravité terrestre
         escapeVelocity: 617.5, // km/s
         color: 0xffdd44,
-        textureUrl: "https://www.solarsystemscope.com/textures/download/2k_sun.jpg",
+        textureUrl: "https://raw.githubusercontent.com/mrdoob/three.js/dev/examples/textures/planets/sun.jpg",
         size: 109, // Taille relative à la Terre
         axialTilt: 7.25, // degrés
         eccentricity: 0,
@@ -1132,8 +1132,7 @@
         gravity: 0.38, // gravité terrestre
         escapeVelocity: 4.3, // km/s
         color: 0xaaaaaa,
-        textureUrl: "https://www.solarsystemscope.com/textures/download/2k_mercury.jpg",
-        bumpMapUrl: "https://planetpixelemporium.com/download/download.php?file=mercury_NRM.jpg",
+        textureUrl: "https://raw.githubusercontent.com/mrdoob/three.js/dev/examples/textures/planets/mercury.jpg",
         size: 0.383, // Taille relative à la Terre
         axialTilt: 0.03, // degrés
         eccentricity: 0.205,
@@ -1177,8 +1176,7 @@
         gravity: 0.91, // gravité terrestre
         escapeVelocity: 10.4, // km/s
         color: 0xffd085,
-        textureUrl: "https://www.solarsystemscope.com/textures/download/2k_venus_atmosphere.jpg",
-        atmosphereUrl: "https://planetpixelemporium.com/download/download.php?file=venus_atmosphere.jpg",
+        textureUrl: "https://raw.githubusercontent.com/mrdoob/three.js/dev/examples/textures/planets/venus_atmosphere.jpg",
         size: 0.949,
         axialTilt: 177.3, // degrés (rotation rétrograde)
         eccentricity: 0.007,
@@ -1224,10 +1222,8 @@
         gravity: 1, // gravité terrestre
         escapeVelocity: 11.2, // km/s
         color: 0x2233ff,
-        textureUrl: "https://www.solarsystemscope.com/textures/download/2k_earth_daymap.jpg",
-        bumpMapUrl: "https://www.solarsystemscope.com/textures/download/2k_earth_normal_map.jpg",
-        specularMapUrl: "https://www.solarsystemscope.com/textures/download/2k_earth_specular_map.jpg",
-        cloudsUrl: "https://www.solarsystemscope.com/textures/download/2k_earth_clouds.jpg",
+        textureUrl: "https://raw.githubusercontent.com/mrdoob/three.js/dev/examples/textures/planets/earth_atmos_2048.jpg",
+        cloudsUrl: "https://raw.githubusercontent.com/mrdoob/three.js/dev/examples/textures/planets/earth_clouds_1024.png",
         size: 1,
         axialTilt: 23.44, // degrés
         eccentricity: 0.017,
@@ -1273,8 +1269,7 @@
         gravity: 0.38, // gravité terrestre
         escapeVelocity: 5.0, // km/s
         color: 0xff4500,
-        textureUrl: "https://www.solarsystemscope.com/textures/download/2k_mars.jpg",
-        bumpMapUrl: "https://planetpixelemporium.com/download/download.php?file=mars_NRM.jpg",
+        textureUrl: "https://raw.githubusercontent.com/mrdoob/three.js/dev/examples/textures/planets/mars.jpg",
         size: 0.532,
         axialTilt: 25.19, // degrés
         eccentricity: 0.094,
@@ -1320,7 +1315,7 @@
         gravity: 2.53, // gravité terrestre
         escapeVelocity: 59.5, // km/s
         color: 0xf0c399,
-        textureUrl: "https://www.solarsystemscope.com/textures/download/2k_jupiter.jpg",
+        textureUrl: "https://raw.githubusercontent.com/mrdoob/three.js/dev/examples/textures/planets/jupiter.jpg",
         size: 11.209,
         axialTilt: 3.13, // degrés
         eccentricity: 0.049,
@@ -1366,8 +1361,8 @@
         gravity: 1.07, // gravité terrestre
         escapeVelocity: 35.5, // km/s
         color: 0xffd85c,
-        textureUrl: "https://www.solarsystemscope.com/textures/download/2k_saturn.jpg",
-        ringsUrl: "https://www.solarsystemscope.com/textures/download/2k_saturn_ring_alpha.png",
+        textureUrl: "https://raw.githubusercontent.com/mrdoob/three.js/dev/examples/textures/planets/saturn.jpg",
+        ringsUrl: "https://raw.githubusercontent.com/mrdoob/three.js/dev/examples/textures/planets/saturn_ring_alpha.png",
         size: 9.449,
         axialTilt: 26.73, // degrés
         eccentricity: 0.057,
@@ -1414,8 +1409,8 @@
         gravity: 0.89, // gravité terrestre
         escapeVelocity: 21.3, // km/s
         color: 0x4fc3f7,
-        textureUrl: "https://www.solarsystemscope.com/textures/download/2k_uranus.jpg",
-        ringsUrl: "https://www.solarsystemscope.com/textures/download/2k_uranus_ring_alpha.png",
+        textureUrl: "https://raw.githubusercontent.com/mrdoob/three.js/dev/examples/textures/planets/uranus.jpg",
+        ringsUrl: "https://raw.githubusercontent.com/mrdoob/three.js/dev/examples/textures/planets/saturn_ring_alpha.png",
         size: 4.007,
         axialTilt: 97.77, // degrés (presque couché sur le côté)
         eccentricity: 0.046,
@@ -1462,7 +1457,7 @@
         gravity: 1.14, // gravité terrestre
         escapeVelocity: 23.5, // km/s
         color: 0x3f51b5,
-        textureUrl: "https://www.solarsystemscope.com/textures/download/2k_neptune.jpg",
+        textureUrl: "https://raw.githubusercontent.com/mrdoob/three.js/dev/examples/textures/planets/neptune.jpg",
         size: 3.883,
         axialTilt: 28.32, // degrés
         eccentricity: 0.010,
@@ -1593,82 +1588,471 @@
         return textureCache[url];
       }
       
-      const loader = new THREE.TextureLoader();
-      const texture = loader.load(url, 
-        // Fonction de succès - texture chargée
-        function(loadedTexture) {
-          console.log(`Texture chargée avec succès: ${url}`);
-        },
-        // Fonction de progression - non utilisée
-        undefined,
-        // Fonction d'erreur - échec du chargement
-        function(err) {
-          console.error(`Erreur lors du chargement de la texture: ${url}`, err);
-          // Charger une texture de secours
-          return loadBackupTexture(url);
-        }
-      );
+      // Pour la Terre, utiliser la texture externe qui fonctionne
+      if (url.includes('earth')) {
+        const loader = new THREE.TextureLoader();
+        const texture = loader.load(url, 
+          function(loadedTexture) {
+            console.log(`Texture de la Terre chargée avec succès: ${url}`);
+          },
+          undefined,
+          function(err) {
+            console.error(`Erreur lors du chargement de la texture de la Terre: ${url}`, err);
+          }
+        );
+        textureCache[url] = texture;
+        return texture;
+      }
+      
+      // Pour toutes les autres planètes, générer des textures localement
+      // car les textures externes ne semblent pas fonctionner correctement
+      console.log(`Génération locale de texture pour: ${url}`);
+      const texture = generateTexture(url);
       textureCache[url] = texture;
       return texture;
     }
     
     /**
-     * Chargement de texture de secours
-     * Charge une texture alternative en cas d'échec du chargement de la texture principale
+     * Génération de texture
+     * Crée une texture procédurale pour une planète si la texture ne peut pas être chargée
      */
-    function loadBackupTexture(originalUrl) {
-      // Déterminer quelle planète a échoué au chargement
-      let backupUrl = '';
+    function generateTexture(url) {
+      console.log(`Génération d'une texture pour: ${url}`);
+      const canvas = document.createElement('canvas');
+      canvas.width = 1024;
+      canvas.height = 1024;
+      const ctx = canvas.getContext('2d');
       
-      if (originalUrl.includes('sun')) {
-        backupUrl = "https://planetpixelemporium.com/download/download.php?file=sun.jpg";
-      } else if (originalUrl.includes('mercury')) {
-        backupUrl = "https://planetpixelemporium.com/download/download.php?file=mercury.jpg";
-      } else if (originalUrl.includes('venus')) {
-        backupUrl = "https://planetpixelemporium.com/download/download.php?file=venus.jpg";
-      } else if (originalUrl.includes('earth')) {
-        backupUrl = "https://planetpixelemporium.com/download/download.php?file=earth.jpg";
-      } else if (originalUrl.includes('mars')) {
-        backupUrl = "https://planetpixelemporium.com/download/download.php?file=mars.jpg";
-      } else if (originalUrl.includes('jupiter')) {
-        backupUrl = "https://planetpixelemporium.com/download/download.php?file=jupiter.jpg";
-      } else if (originalUrl.includes('saturn')) {
-        backupUrl = "https://planetpixelemporium.com/download/download.php?file=saturn.jpg";
-      } else if (originalUrl.includes('uranus')) {
-        backupUrl = "https://planetpixelemporium.com/download/download.php?file=uranus.jpg";
-      } else if (originalUrl.includes('neptune')) {
-        backupUrl = "https://planetpixelemporium.com/download/download.php?file=neptune.jpg";
-      } else if (originalUrl.includes('ring')) {
-        // Texture d'anneau générique
-        const canvas = document.createElement('canvas');
-        canvas.width = 1024;
-        canvas.height = 1024;
-        const ctx = canvas.getContext('2d');
-        const gradient = ctx.createRadialGradient(512, 512, 200, 512, 512, 400);
-        gradient.addColorStop(0, 'rgba(255, 255, 255, 0.8)');
-        gradient.addColorStop(1, 'rgba(255, 255, 255, 0)');
+      // Déterminer quel type de texture générer
+      if (url.includes('sun')) {
+        // Texture du soleil - jaune orangé avec des taches
+        ctx.fillStyle = '#fff3b3'; // Base plus claire
+        ctx.fillRect(0, 0, 1024, 1024);
+        
+        // Ajouter un dégradé radial jaune-orangé
+        const gradient = ctx.createRadialGradient(512, 512, 0, 512, 512, 512);
+        gradient.addColorStop(0, '#fff9c4');
+        gradient.addColorStop(0.5, '#ffd54f');
+        gradient.addColorStop(1, '#ff9800');
+        ctx.globalAlpha = 0.7; // Plus transparent
+        ctx.fillStyle = gradient;
+        ctx.fillRect(0, 0, 1024, 1024);
+        ctx.globalAlpha = 1.0;
+        
+        // Ajouter des taches solaires aléatoires plus subtiles
+        ctx.fillStyle = 'rgba(255, 140, 0, 0.3)'; // Orange transparent
+        for (let i = 0; i < 30; i++) {
+          const x = Math.random() * 1024;
+          const y = Math.random() * 1024;
+          const size = 5 + Math.random() * 50;
+          ctx.beginPath();
+          ctx.arc(x, y, size, 0, Math.PI * 2);
+          ctx.fill();
+        }
+        
+        // Ajouter quelques taches sombres
+        ctx.fillStyle = 'rgba(0, 0, 0, 0.1)';
+        for (let i = 0; i < 15; i++) {
+          const x = Math.random() * 1024;
+          const y = Math.random() * 1024;
+          const size = 3 + Math.random() * 20;
+          ctx.beginPath();
+          ctx.arc(x, y, size, 0, Math.PI * 2);
+          ctx.fill();
+        }
+      } else if (url.includes('mercury')) {
+        // Texture de Mercure - grise avec des cratères
+        ctx.fillStyle = '#bbb'; // Gris plus clair
+        ctx.fillRect(0, 0, 1024, 1024);
+        
+        // Ajouter des variations de terrain
+        for (let i = 0; i < 15; i++) {
+          ctx.fillStyle = `rgba(150, 150, 150, ${Math.random() * 0.4})`;
+          ctx.beginPath();
+          ctx.ellipse(
+            Math.random() * 1024,
+            Math.random() * 1024,
+            Math.random() * 200 + 100,
+            Math.random() * 200 + 50,
+            Math.random() * Math.PI,
+            0,
+            Math.PI * 2
+          );
+          ctx.fill();
+        }
+        
+        // Ajouter des cratères aléatoires
+        for (let i = 0; i < 200; i++) {
+          const x = Math.random() * 1024;
+          const y = Math.random() * 1024;
+          const size = 3 + Math.random() * 15;
+          
+          // Ombre du cratère
+          ctx.fillStyle = 'rgba(50, 50, 50, 0.2)';
+          ctx.beginPath();
+          ctx.arc(x, y, size, 0, Math.PI * 2);
+          ctx.fill();
+          
+          // Centre du cratère plus clair
+          ctx.fillStyle = 'rgba(200, 200, 200, 0.15)';
+          ctx.beginPath();
+          ctx.arc(x - size / 3, y - size / 3, size / 2, 0, Math.PI * 2);
+          ctx.fill();
+        }
+      } else if (url.includes('venus')) {
+        // Texture de Vénus - orange pâle avec des motifs nuageux
+        ctx.fillStyle = '#e8c07f'; // Base orange pâle
+        ctx.fillRect(0, 0, 1024, 1024);
+        
+        // Ajouter des couches de nuages
+        for (let i = 0; i < 8; i++) {
+          ctx.fillStyle = `rgba(220, 200, 150, ${Math.random() * 0.15})`;
+          
+          for (let j = 0; j < 6; j++) {
+            const x = Math.random() * 1024;
+            const y = Math.random() * 1024;
+            const radius = 100 + Math.random() * 300;
+            
+            ctx.beginPath();
+            ctx.arc(x, y, radius, 0, Math.PI * 2);
+            ctx.fill();
+          }
+        }
+        
+        // Ajouter des stries subtiles
+        ctx.strokeStyle = 'rgba(180, 160, 120, 0.2)';
+        ctx.lineWidth = 2;
+        for (let i = 0; i < 40; i++) {
+          const y = Math.random() * 1024;
+          ctx.beginPath();
+          ctx.moveTo(0, y);
+          
+          // Ligne ondulée
+          for (let x = 0; x < 1024; x += 20) {
+            const deviation = Math.sin(x / 100) * 10;
+            ctx.lineTo(x, y + deviation);
+          }
+          
+          ctx.stroke();
+        }
+      } else if (url.includes('earth')) {
+        if (url.includes('clouds')) {
+          // Nuages de la Terre
+          ctx.fillStyle = 'rgba(255, 255, 255, 0)';
+          ctx.fillRect(0, 0, 1024, 1024);
+          
+          // Générer des formations nuageuses aléatoires
+          ctx.fillStyle = 'rgba(255, 255, 255, 0.4)'; // Nuages moins denses
+          for (let i = 0; i < 25; i++) {
+            const x = Math.random() * 1024;
+            const y = Math.random() * 1024;
+            const radius = 30 + Math.random() * 150;
+            
+            ctx.beginPath();
+            ctx.arc(x, y, radius, 0, Math.PI * 2);
+            ctx.fill();
+          }
+        } else {
+          // Texture de la Terre - bleu avec du vert pour les continents
+          ctx.fillStyle = '#1565c0'; // Bleu profond pour les océans
+          ctx.fillRect(0, 0, 1024, 1024);
+          
+          // Ajouter des continents
+          ctx.fillStyle = '#2e7d32'; // Vert plus foncé pour les terres
+          
+          // Formes de continents plus réalistes
+          const continentShapes = [
+            // Afrique stylisée
+            [[400, 300], [500, 250], [550, 350], [500, 550], [400, 600], [350, 500]],
+            // Amérique du Nord stylisée
+            [[200, 200], [350, 150], [400, 300], [300, 350], [150, 300]],
+            // Amérique du Sud stylisée
+            [[300, 450], [350, 400], [400, 500], [350, 650], [300, 600]],
+            // Eurasie stylisée
+            [[500, 200], [750, 180], [800, 300], [700, 350], [550, 320]]
+          ];
+          
+          continentShapes.forEach(points => {
+            ctx.beginPath();
+            ctx.moveTo(points[0][0], points[0][1]);
+            
+            for (let i = 1; i < points.length; i++) {
+              ctx.lineTo(points[i][0], points[i][1]);
+            }
+            
+            ctx.closePath();
+            ctx.fill();
+          });
+          
+          // Ajouter des calottes polaires
+          ctx.fillStyle = '#e0e0e0'; // Blanc cassé
+          ctx.beginPath();
+          ctx.arc(512, 100, 150, 0, Math.PI * 2);
+          ctx.fill();
+          
+          ctx.beginPath();
+          ctx.arc(512, 924, 150, 0, Math.PI * 2);
+          ctx.fill();
+        }
+      } else if (url.includes('mars')) {
+        // Texture de Mars - rouge orangé avec des variations
+        ctx.fillStyle = '#c14a09'; // Rouge-orangé plus doux
+        ctx.fillRect(0, 0, 1024, 1024);
+        
+        // Ajouter des variations de terrain
+        for (let i = 0; i < 30; i++) {
+          const x = Math.random() * 1024;
+          const y = Math.random() * 1024;
+          const radius = 30 + Math.random() * 100;
+          
+          // Varier entre des terrains plus clairs et plus foncés
+          const color = Math.random() > 0.5 ? 
+            'rgba(150, 80, 30, 0.2)' : 
+            'rgba(200, 120, 60, 0.2)';
+          ctx.fillStyle = color;
+          
+          ctx.beginPath();
+          ctx.arc(x, y, radius, 0, Math.PI * 2);
+          ctx.fill();
+        }
+        
+        // Ajouter des calottes polaires
+        ctx.fillStyle = 'rgba(255, 255, 255, 0.6)';
+        ctx.beginPath();
+        ctx.arc(512, 80, 140, 0, Math.PI * 2);
+        ctx.fill();
+        
+        ctx.beginPath();
+        ctx.arc(512, 944, 140, 0, Math.PI * 2);
+        ctx.fill();
+      } else if (url.includes('jupiter')) {
+        // Texture de Jupiter - bandes horizontales
+        const gradient = ctx.createLinearGradient(0, 0, 0, 1024);
+        gradient.addColorStop(0, '#dba56f');
+        gradient.addColorStop(0.15, '#e8c596');
+        gradient.addColorStop(0.25, '#c1895c');
+        gradient.addColorStop(0.4, '#e0b880');
+        gradient.addColorStop(0.5, '#ac7648');
+        gradient.addColorStop(0.65, '#e0b880');
+        gradient.addColorStop(0.75, '#bd8958');
+        gradient.addColorStop(0.9, '#e8c596');
+        gradient.addColorStop(1, '#dba56f');
+        
         ctx.fillStyle = gradient;
         ctx.fillRect(0, 0, 1024, 1024);
         
-        const texture = new THREE.CanvasTexture(canvas);
-        return texture;
-      } else {
-        // Texture générique
-        const canvas = document.createElement('canvas');
-        canvas.width = 512;
-        canvas.height = 512;
-        const ctx = canvas.getContext('2d');
-        ctx.fillStyle = 'white';
-        ctx.fillRect(0, 0, 512, 512);
+        // Ajouter des stries horizontales subtiles
+        for (let y = 0; y < 1024; y += 40) {
+          const thickness = 3 + Math.random() * 5;
+          const transparency = 0.05 + Math.random() * 0.1;
+          
+          ctx.fillStyle = `rgba(150, 100, 70, ${transparency})`;
+          ctx.fillRect(0, y, 1024, thickness);
+          
+          ctx.fillStyle = `rgba(230, 190, 150, ${transparency})`;
+          ctx.fillRect(0, y + 15, 1024, thickness - 1);
+        }
         
-        const texture = new THREE.CanvasTexture(canvas);
-        return texture;
+        // Ajouter la grande tache rouge
+        const grs = {
+          x: 300,
+          y: 400,
+          width: 200,
+          height: 100
+        };
+        
+        // Créer un dégradé pour la tache
+        const grsGradient = ctx.createRadialGradient(
+          grs.x, grs.y, 0,
+          grs.x, grs.y, grs.width / 1.5
+        );
+        grsGradient.addColorStop(0, 'rgba(190, 70, 50, 0.7)');
+        grsGradient.addColorStop(1, 'rgba(160, 60, 40, 0)');
+        
+        ctx.fillStyle = grsGradient;
+        ctx.beginPath();
+        ctx.ellipse(
+          grs.x, grs.y,
+          grs.width, grs.height,
+          0, 0, Math.PI * 2
+        );
+        ctx.fill();
+      } else if (url.includes('saturn')) {
+        if (url.includes('ring')) {
+          // Anneaux de Saturne - transparents au centre, blancs sur les bords
+          ctx.fillStyle = 'rgba(0, 0, 0, 0)';
+          ctx.fillRect(0, 0, 1024, 1024);
+          
+          const centerX = 512;
+          const centerY = 512;
+          
+          // Créer plusieurs bandes d'anneaux avec des opacités et couleurs diverses
+          const rings = [
+            { inner: 260, outer: 290, color: 'rgba(255, 255, 255, 0.4)' },
+            { inner: 300, outer: 340, color: 'rgba(240, 230, 200, 0.5)' },
+            { inner: 350, outer: 400, color: 'rgba(250, 240, 210, 0.6)' },
+            { inner: 410, outer: 430, color: 'rgba(210, 190, 160, 0.3)' }
+          ];
+          
+          rings.forEach(ring => {
+            ctx.beginPath();
+            ctx.arc(centerX, centerY, ring.outer, 0, Math.PI * 2);
+            ctx.arc(centerX, centerY, ring.inner, 0, Math.PI * 2, true);
+            ctx.closePath();
+            
+            ctx.fillStyle = ring.color;
+            ctx.fill();
+          });
+          
+          // Créer un trou pour la planète
+          ctx.globalCompositeOperation = 'destination-out';
+          ctx.beginPath();
+          ctx.arc(centerX, centerY, 250, 0, Math.PI * 2);
+          ctx.fill();
+          ctx.globalCompositeOperation = 'source-over';
+          
+          // Ajouter des détails aux anneaux
+          ctx.strokeStyle = 'rgba(255, 255, 255, 0.1)';
+          ctx.lineWidth = 1;
+          
+          for (let r = 260; r < 430; r += 5) {
+            ctx.beginPath();
+            ctx.arc(centerX, centerY, r, 0, Math.PI * 2);
+            ctx.stroke();
+          }
+        } else {
+          // Texture de Saturne - jaune pâle avec des bandes plus subtiles
+          const gradient = ctx.createLinearGradient(0, 0, 0, 1024);
+          gradient.addColorStop(0, '#e4d4a0');
+          gradient.addColorStop(0.2, '#f0e6c8');
+          gradient.addColorStop(0.3, '#d8c890');
+          gradient.addColorStop(0.5, '#f5ebd0');
+          gradient.addColorStop(0.6, '#d8c890');
+          gradient.addColorStop(0.8, '#e8dca8');
+          gradient.addColorStop(1, '#e4d4a0');
+          
+          ctx.fillStyle = gradient;
+          ctx.fillRect(0, 0, 1024, 1024);
+          
+          // Bandes subtiles
+          for (let y = 0; y < 1024; y += 60) {
+            ctx.fillStyle = `rgba(200, 180, 140, 0.1)`;
+            ctx.fillRect(0, y, 1024, 15);
+          }
+        }
+      } else if (url.includes('uranus')) {
+        if (url.includes('ring')) {
+          // Anneaux d'Uranus - très fins et pâles
+          ctx.fillStyle = 'rgba(0, 0, 0, 0)';
+          ctx.fillRect(0, 0, 1024, 1024);
+          
+          const centerX = 512;
+          const centerY = 512;
+          
+          // Anneaux fins
+          const rings = [
+            { inner: 280, outer: 295, color: 'rgba(255, 255, 255, 0.15)' },
+            { inner: 300, outer: 310, color: 'rgba(255, 255, 255, 0.20)' },
+            { inner: 320, outer: 330, color: 'rgba(255, 255, 255, 0.15)' }
+          ];
+          
+          rings.forEach(ring => {
+            ctx.beginPath();
+            ctx.arc(centerX, centerY, ring.outer, 0, Math.PI * 2);
+            ctx.arc(centerX, centerY, ring.inner, 0, Math.PI * 2, true);
+            ctx.closePath();
+            
+            ctx.fillStyle = ring.color;
+            ctx.fill();
+          });
+          
+          // Créer un trou pour la planète
+          ctx.globalCompositeOperation = 'destination-out';
+          ctx.beginPath();
+          ctx.arc(centerX, centerY, 270, 0, Math.PI * 2);
+          ctx.fill();
+          ctx.globalCompositeOperation = 'source-over';
+        } else {
+          // Texture d'Uranus - bleu-vert pâle uni
+          ctx.fillStyle = '#97d8eb'; // Bleu-vert plus doux
+          ctx.fillRect(0, 0, 1024, 1024);
+          
+          // Créer un dégradé subtil
+          const gradient = ctx.createLinearGradient(0, 0, 1024, 1024);
+          gradient.addColorStop(0, 'rgba(120, 220, 230, 0.4)');
+          gradient.addColorStop(0.5, 'rgba(150, 230, 240, 0.1)');
+          gradient.addColorStop(1, 'rgba(120, 220, 230, 0.4)');
+          
+          ctx.fillStyle = gradient;
+          ctx.fillRect(0, 0, 1024, 1024);
+          
+          // Ajouter quelques légères variations
+          for (let i = 0; i < 10; i++) {
+            const x = Math.random() * 1024;
+            const y = Math.random() * 1024;
+            const radius = 150 + Math.random() * 250;
+            
+            ctx.fillStyle = 'rgba(130, 200, 210, 0.15)';
+            ctx.beginPath();
+            ctx.arc(x, y, radius, 0, Math.PI * 2);
+            ctx.fill();
+          }
+        }
+      } else if (url.includes('neptune')) {
+        // Texture de Neptune - bleu profond
+        ctx.fillStyle = '#1e40af'; // Bleu plus profond
+        ctx.fillRect(0, 0, 1024, 1024);
+        
+        // Créer un dégradé subtil pour plus de dimension
+        const gradient = ctx.createRadialGradient(
+          512, 512, 200,
+          512, 512, 600
+        );
+        gradient.addColorStop(0, 'rgba(40, 80, 170, 0.5)');
+        gradient.addColorStop(1, 'rgba(20, 50, 120, 0)');
+        
+        ctx.fillStyle = gradient;
+        ctx.fillRect(0, 0, 1024, 1024);
+        
+        // Ajouter des nuages et des tempêtes
+        for (let i = 0; i < 15; i++) {
+          const x = Math.random() * 1024;
+          const y = Math.random() * 1024;
+          const radius = 30 + Math.random() * 70;
+          
+          ctx.fillStyle = 'rgba(60, 100, 180, 0.2)';
+          ctx.beginPath();
+          ctx.arc(x, y, radius, 0, Math.PI * 2);
+          ctx.fill();
+        }
+        
+        // Ajouter la Grande Tache Sombre
+        ctx.fillStyle = 'rgba(10, 30, 80, 0.5)';
+        ctx.beginPath();
+        ctx.ellipse(400, 600, 80, 50, 0, 0, Math.PI * 2);
+        ctx.fill();
+      } else {
+        // Texture par défaut
+        ctx.fillStyle = '#eeeeee'; // Gris très pâle
+        ctx.fillRect(0, 0, 1024, 1024);
+        
+        // Ajouter un peu de texture
+        for (let i = 0; i < 100; i++) {
+          ctx.fillStyle = `rgba(200, 200, 200, ${Math.random() * 0.1})`;
+          ctx.beginPath();
+          ctx.arc(
+            Math.random() * 1024,
+            Math.random() * 1024,
+            Math.random() * 50,
+            0,
+            Math.PI * 2
+          );
+          ctx.fill();
+        }
       }
       
-      // Charger la texture de secours
-      console.log(`Chargement de la texture de secours: ${backupUrl}`);
-      const loader = new THREE.TextureLoader();
-      return loader.load(backupUrl);
+      const texture = new THREE.CanvasTexture(canvas);
+      return texture;
     }
     
     /**
@@ -1770,12 +2154,12 @@
     function setupPostProcessing() {
       const renderScene = new THREE.RenderPass(scene, camera);
       
-      // Réduire l'intensité du bloom pour éviter la surexposition
+      // Paramètres bloom plus subtils avec moins d'intensité
       const bloomPass = new THREE.UnrealBloomPass(
         new THREE.Vector2(window.innerWidth, window.innerHeight),
-        isLowPerformance ? 0.8 : 1.0,  // intensité réduite
-        isLowPerformance ? 0.4 : 0.3,  // rayon
-        isLowPerformance ? 0.9 : 0.7   // seuil augmenté pour réduire l'effet sur les planètes
+        isLowPerformance ? 0.3 : 0.4,  // intensité réduite
+        isLowPerformance ? 0.4 : 0.3,  // rayon modéré
+        isLowPerformance ? 0.9 : 0.85  // seuil augmenté pour réduire l'effet
       );
       
       composer = new THREE.EffectComposer(renderer);
@@ -2394,7 +2778,10 @@
       
       // Mettre à jour le contenu du panneau d'information
       document.getElementById('planet-info-title').textContent = data.name;
+      
+      // Utiliser la texture pour l'icône (url de la texture pour garantir qu'une image est affichée)
       document.getElementById('planet-info-icon').style.backgroundImage = `url(${data.textureUrl})`;
+      
       document.getElementById('planet-info-distance').textContent = `${data.distance} UA (${(data.distance * 149.6).toFixed(0)} millions km)`;
       document.getElementById('planet-info-diameter').textContent = `${data.diameter.toLocaleString()} km`;
       document.getElementById('planet-info-revolution').textContent = `${data.revolutionPeriod.toLocaleString()} jours`;
@@ -2693,7 +3080,6 @@
       const data = planetData.sun;
       
       // Taille du soleil basée sur le diamètre réel par rapport à la Terre
-      // Le Soleil a un diamètre environ 109 fois celui de la Terre
       const sunRealSize = data.size * SIZE_SCALE_BASE;
       // Réduire légèrement la taille pour une meilleure visualisation
       const sunSize = sunRealSize * (isRealisticScale ? 0.3 : 0.5);
@@ -2702,15 +3088,15 @@
       const sunGroup = new THREE.Group();
       scene.add(sunGroup);
       
-      // Texture du soleil
-      const sunTexture = loadTexture(data.textureUrl);
+      // Texture du soleil (générée localement pour garantir sa qualité)
+      const sunTexture = generateTexture(data.textureUrl);
       
-      // Créer un matériau lumineux pour le soleil
+      // Créer un matériau lumineux pour le soleil avec moins d'intensité
       const sunMaterial = new THREE.MeshBasicMaterial({
         map: sunTexture,
-        color: data.color,
-        emissive: data.color,
-        emissiveIntensity: 1
+        color: 0xf5a742, // Orange doux
+        emissive: 0xf08000,
+        emissiveIntensity: 0.3
       });
       
       // Créer la sphère du soleil
@@ -2726,48 +3112,56 @@
         name: data.name
       };
       
-      // Ajouter des couches de lueur pour un effet plus réaliste
-      // Première couche - jaune vif
-      const sunGlow1 = createSunGlowLayer(sunSize * 1.2, 0xffff00, 0.8);
+      // Ajouter des couches de lueur avec opacité réduite
+      const sunGlow1 = createSunGlowLayer(sunSize * 1.2, 0xffdd44, 0.2);
       sunGroup.add(sunGlow1);
       
-      // Deuxième couche - orange
-      const sunGlow2 = createSunGlowLayer(sunSize * 1.5, 0xffaa00, 0.6);
+      const sunGlow2 = createSunGlowLayer(sunSize * 1.5, 0xffcc00, 0.15);
       sunGroup.add(sunGlow2);
       
-      // Troisième couche - orange-rouge
-      const sunGlow3 = createSunGlowLayer(sunSize * 2.0, 0xff7700, 0.4);
+      const sunGlow3 = createSunGlowLayer(sunSize * 2.0, 0xff9900, 0.08);
       sunGroup.add(sunGlow3);
       
-      // Quatrième couche - rouge pâle
-      const sunGlow4 = createSunGlowLayer(sunSize * 2.5, 0xff4400, 0.2);
+      const sunGlow4 = createSunGlowLayer(sunSize * 2.5, 0xff6600, 0.04);
       sunGroup.add(sunGlow4);
       
       // Ajouter un effet d'éclat
       const flareTexture = createFlareTexture();
       const flareMaterial = new THREE.SpriteMaterial({
         map: flareTexture,
-        color: 0xffffff,
+        color: 0xffffcc,
         transparent: true,
+        opacity: 0.35,
         blending: THREE.AdditiveBlending
       });
       
       const flare = new THREE.Sprite(flareMaterial);
-      flare.scale.set(sunSize * 5, sunSize * 5, 1);
+      flare.scale.set(sunSize * 4, sunSize * 4, 1);
       sunGroup.add(flare);
       
-      // Lumière du soleil - intensité réduite pour éviter la surexposition
-      const sunLight = new THREE.PointLight(0xffffcc, 10, 1000);
+      // Éclairage global
+      // Lumière principale du soleil
+      const sunLight = new THREE.PointLight(0xffffcc, 1.5, 1000);
       sunGroup.add(sunLight);
       
-      // Lumière ambiante - intensité réduite pour un éclairage plus équilibré
-      const ambientLight = new THREE.AmbientLight(0xffffff, 0.8);
+      // Lumière ambiante générale
+      const ambientLight = new THREE.AmbientLight(0xffffff, 0.3);
       scene.add(ambientLight);
       
-      // Lumière directionnelle pour mieux éclairer les planètes - intensité réduite
-      const directionalLight = new THREE.DirectionalLight(0xffffff, 2.0);
-      directionalLight.position.set(1, 1, 1);
+      // Lumière directionnelle pour mieux éclairer les planètes
+      const directionalLight = new THREE.DirectionalLight(0xffffff, 0.4);
+      // Repositionner la lumière pour éviter la surexposition d'une face
+      directionalLight.position.set(-1, 0.5, 0.5).normalize();
       scene.add(directionalLight);
+      
+      // Ajouter une lumière secondaire du côté opposé pour équilibrer l'éclairage
+      const secondaryLight = new THREE.DirectionalLight(0xffffee, 0.2);
+      secondaryLight.position.set(1, -0.5, -0.5).normalize();
+      scene.add(secondaryLight);
+      
+      // Ajouter une lumière hémisphérique pour un éclairage plus doux et naturel
+      const hemiLight = new THREE.HemisphereLight(0xffffbb, 0x080820, 0.25);
+      scene.add(hemiLight);
     }
     
     /**
@@ -2858,42 +3252,52 @@
       // Géométrie de la planète
       const planetGeometry = new THREE.SphereGeometry(1, isLowPerformance ? 16 : 32, isLowPerformance ? 16 : 32);
       
-      // Texture de la planète
+      // Texture de la planète - traitement spécial pour la Terre
       const planetTexture = loadTexture(data.textureUrl);
       
-      // Matériau de planète amélioré avec des cartes de relief et de spécularité si disponibles
+      // Paramètres de matériau différents selon la planète
       let planetMaterial;
       
-      if (data.bumpMapUrl && data.specularMapUrl && !isLowPerformance) {
-        // Matériau de haute qualité avec cartes de relief et de spécularité
-        const bumpMap = loadTexture(data.bumpMapUrl);
-        const specularMap = loadTexture(data.specularMapUrl);
-        
-        planetMaterial = new THREE.MeshPhongMaterial({
-          map: planetTexture,
-          bumpMap: bumpMap,
-          bumpScale: 0.05,
-          specularMap: specularMap,
-          specular: new THREE.Color(0x333333),
-          shininess: 25
-        });
-      } else if (data.bumpMapUrl && !isLowPerformance) {
-        // Matériau de qualité moyenne avec carte de relief uniquement
-        const bumpMap = loadTexture(data.bumpMapUrl);
-        
+      if (planetId === 'earth') {
+        // Garder le matériau actuel pour la Terre qui fonctionne bien
         planetMaterial = new THREE.MeshStandardMaterial({
           map: planetTexture,
-          bumpMap: bumpMap,
-          bumpScale: 0.05,
-          roughness: 0.8,
-          metalness: 0.1
+          roughness: 0.9,
+          metalness: 0.05
+        });
+        
+        // Si la texture des nuages existe, l'ajouter
+        if (data.cloudsUrl) {
+          const cloudsTexture = loadTexture(data.cloudsUrl);
+          const cloudsGeometry = new THREE.SphereGeometry(1.02, 32, 32);
+          const cloudsMaterial = new THREE.MeshPhongMaterial({
+            map: cloudsTexture,
+            transparent: true,
+            opacity: 0.7,
+            side: THREE.DoubleSide
+          });
+          
+          const clouds = new THREE.Mesh(cloudsGeometry, cloudsMaterial);
+          planetGroup.add(clouds);
+          objects[`clouds_${planetId}`] = clouds;
+          clouds.scale.set(size, size, size);
+        }
+      } else if (planetId === 'sun') {
+        // Matériau émissif pour le soleil
+        planetMaterial = new THREE.MeshBasicMaterial({
+          map: planetTexture,
+          color: data.color,
+          emissive: data.color,
+          emissiveIntensity: 0.4
         });
       } else {
-        // Matériau de base pour les appareils à faible performance
+        // Matériau standard pour les autres planètes avec émissivité très faible pour éviter la surbrillance
         planetMaterial = new THREE.MeshStandardMaterial({
           map: planetTexture,
-          roughness: 0.8,
-          metalness: 0.1
+          emissive: new THREE.Color(data.color).multiplyScalar(0.03), // Émissivité encore plus faible
+          emissiveIntensity: 0.05,
+          roughness: 0.95, // Presque totalement rugueux pour minimiser les reflets
+          metalness: 0.05
         });
       }
       
@@ -2902,32 +3306,20 @@
       planetGroup.add(planet);
       
       // Ajouter une atmosphère si la planète en a une
-      if (data.hasAtmosphere && !isLowPerformance) {
+      if (data.hasAtmosphere && !isLowPerformance && planetId !== 'earth') {
         const atmosphereSize = 1.05; // 5% plus grande que la planète
         const atmosphereGeometry = new THREE.SphereGeometry(atmosphereSize, 32, 32);
         
-        let atmosphereMaterial;
-        
-        if (data.atmosphereUrl) {
-          // Utiliser une texture d'atmosphère spécifique si disponible
-          const atmosphereTexture = loadTexture(data.atmosphereUrl);
-          atmosphereMaterial = new THREE.MeshPhongMaterial({
-            map: atmosphereTexture,
-            transparent: true,
-            opacity: 0.5,
-            side: THREE.DoubleSide,
-            blending: THREE.AdditiveBlending
-          });
-        } else {
-          // Utiliser une atmosphère générique
-          atmosphereMaterial = new THREE.MeshPhongMaterial({
-            color: data.atmosphereColor,
-            transparent: true,
-            opacity: 0.2,
-            side: THREE.DoubleSide,
-            blending: THREE.AdditiveBlending
-          });
-        }
+        // Atmosphère moins visible
+        const atmosphereMaterial = new THREE.MeshPhongMaterial({
+          color: data.atmosphereColor,
+          transparent: true,
+          opacity: 0.15,
+          side: THREE.DoubleSide,
+          blending: THREE.AdditiveBlending,
+          emissive: data.atmosphereColor,
+          emissiveIntensity: 0.05
+        });
         
         const atmosphere = new THREE.Mesh(atmosphereGeometry, atmosphereMaterial);
         planet.add(atmosphere);
@@ -2937,24 +3329,6 @@
       // Ajouter des anneaux pour Saturne et Uranus
       if (data.hasRings && data.ringsUrl) {
         createPlanetRings(planet, data.ringsUrl, size);
-      }
-      
-      // Ajouter des nuages pour la Terre
-      if (planetId === 'earth' && data.cloudsUrl && !isLowPerformance) {
-        const cloudsSize = 1.02; // 2% plus grande que la planète
-        const cloudsGeometry = new THREE.SphereGeometry(cloudsSize, 32, 32);
-        const cloudsTexture = loadTexture(data.cloudsUrl);
-        
-        const cloudsMaterial = new THREE.MeshPhongMaterial({
-          map: cloudsTexture,
-          transparent: true,
-          opacity: 0.8,
-          side: THREE.DoubleSide
-        });
-        
-        const clouds = new THREE.Mesh(cloudsGeometry, cloudsMaterial);
-        planet.add(clouds);
-        objects[`clouds_${planetId}`] = clouds;
       }
       
       // Position initiale sur l'orbite
@@ -2981,6 +3355,12 @@
         name: data.name
       };
       
+      // Ajouter une lumière très faible pour les planètes distantes
+      if (planetId !== 'sun' && planetId !== 'earth' && data.distance > 3) {
+        const planetLight = new THREE.PointLight(0xffffff, 0.05, size * 2);
+        planet.add(planetLight);
+      }
+      
       planets[planetId] = planet;
       objects[`planetGroup_${planetId}`] = planetGroup;
     }
@@ -2990,8 +3370,8 @@
      * Génère des anneaux pour des planètes comme Saturne
      */
     function createPlanetRings(planet, ringsUrl, planetSize) {
-      // Charger la texture des anneaux
-      const ringsTexture = loadTexture(ringsUrl);
+      // Charger la texture des anneaux (toujours générée localement pour plus de fiabilité)
+      const ringsTexture = generateTexture(ringsUrl);
       
       // Créer la géométrie des anneaux
       // Rayon intérieur, rayon extérieur, segments
@@ -3011,17 +3391,24 @@
         );
       }
       
-      // Créer le matériau des anneaux
+      // Créer le matériau des anneaux avec émissivité pour plus de visibilité
       const ringsMaterial = new THREE.MeshBasicMaterial({
         map: ringsTexture,
         transparent: true,
-        side: THREE.DoubleSide
+        side: THREE.DoubleSide,
+        emissive: 0xffffff,
+        emissiveIntensity: 0.2
       });
       
       // Créer le maillage des anneaux
       const rings = new THREE.Mesh(ringsGeometry, ringsMaterial);
       rings.rotation.x = Math.PI / 2;
       rings.scale.set(planetSize, planetSize, planetSize);
+      
+      // Ajouter une légère émission de lumière aux anneaux
+      const ringsLight = new THREE.PointLight(0xffffff, 0.2, planetSize * 3);
+      rings.add(ringsLight);
+      
       planet.add(rings);
     }
     
@@ -3070,7 +3457,82 @@
         
         const sphere = document.createElement('div');
         sphere.className = 'planet-comparison-sphere';
-        sphere.style.backgroundImage = `url(${planet.textureUrl})`;
+        
+        // Utiliser la texture de la planète pour le fond
+        if (planet.id === 'earth') {
+          // Pour la Terre, utiliser directement l'URL de la texture
+          sphere.style.backgroundImage = `url(${planet.textureUrl})`;
+        } else {
+          // Pour les autres planètes, créer une texture procédurale et l'ajouter à l'élément
+          const canvas = document.createElement('canvas');
+          canvas.width = 128;
+          canvas.height = 128;
+          const ctx = canvas.getContext('2d');
+          
+          // Utiliser la même fonction que pour les textures 3D mais à taille réduite
+          let bgColor;
+          
+          switch (planet.id) {
+            case 'sun':
+              bgColor = '#ffcc33';
+              break;
+            case 'mercury':
+              bgColor = '#aaa';
+              break;
+            case 'venus':
+              bgColor = '#e6c378';
+              break;
+            case 'mars':
+              bgColor = '#c1440e';
+              break;
+            case 'jupiter':
+              bgColor = '#c18f5a';
+              break;
+            case 'saturn':
+              bgColor = '#e8d1a7';
+              break;
+            case 'uranus':
+              bgColor = '#c9f2f5';
+              break;
+            case 'neptune':
+              bgColor = '#3a5cc9';
+              break;
+            default:
+              bgColor = '#fff';
+          }
+          
+          // Dessiner un cercle de la couleur de la planète
+          ctx.fillStyle = bgColor;
+          ctx.beginPath();
+          ctx.arc(64, 64, 64, 0, Math.PI * 2);
+          ctx.fill();
+          
+          // Ajouter quelques détails selon la planète
+          if (planet.id === 'jupiter' || planet.id === 'saturn') {
+            // Bandes horizontales pour les géantes gazeuses
+            for (let y = 20; y < 100; y += 20) {
+              ctx.fillStyle = `rgba(0, 0, 0, 0.1)`;
+              ctx.fillRect(10, y, 108, 10);
+            }
+          } else if (planet.id === 'mars') {
+            // Taches rouges pour Mars
+            ctx.fillStyle = 'rgba(170, 30, 0, 0.3)';
+            ctx.beginPath();
+            ctx.arc(40, 40, 20, 0, Math.PI * 2);
+            ctx.fill();
+          } else if (planet.id === 'uranus' || planet.id === 'neptune') {
+            // Couleur uniforme pour les géantes de glace
+            ctx.fillStyle = planet.id === 'uranus' ? 'rgba(200, 255, 255, 0.3)' : 'rgba(100, 100, 255, 0.3)';
+            ctx.beginPath();
+            ctx.arc(64, 64, 40, 0, Math.PI * 2);
+            ctx.fill();
+          }
+          
+          // Utiliser l'URL de données pour l'image générée
+          const dataUrl = canvas.toDataURL('image/png');
+          sphere.style.backgroundImage = `url(${dataUrl})`;
+        }
+        
         sphere.style.width = `${height}px`;
         sphere.style.height = `${height}px`;
         
