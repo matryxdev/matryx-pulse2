@@ -2901,7 +2901,7 @@
     
     /**
      * Créer un fond étoilé
-     * Génère un fond étoilé réaliste avec des nébuleuses
+     * Génère un fond étoilé réaliste
      */
     function createStarBackground() {
       // Étoiles (particules) avec instanciation pour optimisation
@@ -2938,12 +2938,7 @@
       const stars = new THREE.Points(starsGeometry, starsMaterial);
       scene.add(stars);
       objects.stars = stars;
-      
-      // Nébuleuses (uniquement pour les appareils à haute performance)
-
     }
-    
-
     
     /**
      * Créer le soleil
@@ -2969,7 +2964,7 @@
         map: sunTexture,
         color: 0xf5a742, // Orange doux
         emissive: 0xf08000,
-        emissiveIntensity: 0.2
+        emissiveIntensity: 0.3
       });
       
       // Créer la sphère du soleil
@@ -3161,16 +3156,20 @@
           map: planetTexture,
           color: data.color,
           emissive: data.color,
-          emissiveIntensity: 0.2
+          emissiveIntensity: 0.4
         });
       } else {
         // Matériau standard pour les autres planètes avec émissivité très faible pour éviter la surbrillance
+        // Réduire la luminosité pour toutes les planètes sauf la Terre
+        const reducedColor = new THREE.Color(data.color).multiplyScalar(0.7); // Réduction de 30% de la luminosité
+        
         planetMaterial = new THREE.MeshStandardMaterial({
           map: planetTexture,
-          emissive: new THREE.Color(data.color).multiplyScalar(0.03), // Émissivité encore plus faible
-          emissiveIntensity: 0.02,
-          roughness: 0.98, // Presque totalement rugueux pour minimiser les reflets
-          metalness: 0.03
+          color: reducedColor,
+          emissive: new THREE.Color(data.color).multiplyScalar(0.02), // Émissivité encore plus faible
+          emissiveIntensity: 0.03,
+          roughness: 0.95, // Presque totalement rugueux pour minimiser les reflets
+          metalness: 0.05
         });
       }
       
@@ -3482,16 +3481,6 @@
       // Animation des étoiles
       if (objects.stars) {
         objects.stars.rotation.y += delta * 0.001;
-      }
-      
-      // Animation des nébuleuses
-      if (objects.nebula) {
-        objects.nebula.rotation.y += delta * 0.0005;
-      }
-      
-      if (objects.nebula2) {
-        objects.nebula2.rotation.y -= delta * 0.0003;
-        objects.nebula2.rotation.x += delta * 0.0002;
       }
       
       // Mettre à jour la position de l'étiquette de la planète si une planète est survolée
